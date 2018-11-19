@@ -18,7 +18,7 @@
 		<!-- CSS -->
 		{{- $inServerMode	:= .Site.IsServer }}
 		{{- $cssTarget		:= "css/style.css" }}
-		{{- $style			:= resources.Get "scss/tale.scss" | resources.ToCSS | resources.PostCSS | resources.Minify -}}
+		{{- $style			:= resources.Get "styles/main.scss" | resources.ToCSS | resources.PostCSS | resources.Minify -}}
   		<link rel="stylesheet" href="{{ $style.RelPermalink }}">
 		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Libre+Baskerville:400,400i,700">
 	
