@@ -4,6 +4,12 @@
   width: 80%;
 }
 
+.header-home {
+  min-height: 80vh;
+  padding: 20rem 1rem;
+  background-color: $header-home-background;
+}
+
 main,
 footer,
 .nav-container {
@@ -24,8 +30,9 @@ footer,
   }
 
   &-title {
-    @include transition(all .2s ease-out);
+    transition: all .2s ease-out;
     color: $default-color;
+    font-size: 1rem;
     display: inline-block;
     margin: 0;
     padding-right: .2rem;
@@ -44,7 +51,7 @@ footer,
   }
 
   li {
-    @include transition(all .2s ease-out);
+    transition: all .2s ease-out;
     color: $default-color;
     display: inline-block;
     opacity: .6;

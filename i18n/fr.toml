@@ -1,0 +1,20 @@
+[posts]
+other = "Posts"
+
+[about]
+other = "À propos"
+
+[writtenBy]
+other = "Par"
+
+[on]
+other = "le"
+
+[top]
+other = "Haut"
+
+[generator]
+other = "Créé avec <a href='https://gohugo.io'>Hugo</a> à partir du thème <a href='https://github.com/EmielH/tale-hugo/'>Tale</a>."
+
+[publishdate]
+other = "{{ .PublishDate.Format \"2006/01/02\" }}"
