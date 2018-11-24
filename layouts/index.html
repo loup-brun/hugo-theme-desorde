@@ -1,25 +1,21 @@
 {{ define "main" }}
 
-<main>
-	{{ partial "index/introduction.html" . }}
+<div class="catalogue">
+  {{ range (.Paginate .Pages).Pages }}
+  {{ .Render "summary" }}
+  {{ end }}
+</div>
 
-	<div class="catalogue">
-		{{ range (.Paginate .Pages).Pages }}
-			{{ .Render "summary" }}
-		{{ end }}
-	</div>
-	
-	<div class="pagination">
-		{{ if .Paginator.HasPrev }}
-			<a href="{{ .Paginator.Prev.URL }}" class="left arrow">&#8592;</a>
-		{{ end }}
-		{{ if .Paginator.HasNext }}
-			<a href="{{ .Paginator.Next.URL }}" class="right arrow">&#8594;</a>
-		{{ end }}
-	
-		<span>{{ .Paginator.PageNumber }}</span>
-	</div>
-</main>
+<div class="pagination">
+  {{ if .Paginator.HasPrev }}
+  <a href="{{ .Paginator.Prev.URL }}" class="left arrow" title="{{ i18n "previousPage" }}">&#8592;</a>
+  {{ end }}
+  {{ if .Paginator.HasNext }}
+  <a href="{{ .Paginator.Next.URL }}" class="right arrow" title="{{ i18n "nextPage" }}">&#8594;</a>
+  {{ end }}
+
+  <span>{{ .Paginator.PageNumber }}</span>
+</div>
 
 <!-- Netlify identity widget -->
 <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>

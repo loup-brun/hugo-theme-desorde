@@ -13,6 +13,18 @@ other = "le"
 [top]
 other = "Haut"
 
+[previousArticle]
+other = "Précédent"
+
+[nextArticle]
+other = "Suivant"
+
+[previousPage]
+other = "Précédente"
+
+[nextPage]
+other = "Suivante"
+
 [generator]
 other = "Créé avec <a href='https://gohugo.io'>Hugo</a> à partir du thème <a href='https://github.com/EmielH/tale-hugo/'>Tale</a>."
 

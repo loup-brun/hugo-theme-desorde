@@ -1,5 +1,5 @@
 .post {
-  padding: 3rem 0;
+  padding: 2rem 0;
   
   &-header {
 //    padding: 2rem 0;
@@ -24,14 +24,19 @@
   }
 
   &-line {
+    border: 0;
     border-top: 0.2rem solid $default-shade;
     display: block;
-    margin: 1rem auto 3rem;
-    width: 4rem;
+    margin: 2rem auto;
+    width: 2rem;
   }
   
   &-content {
     margin-top: 4rem;
+    
+    a:hover {
+      text-decoration: underline;
+    }
   }
 
   p {
@@ -41,10 +46,6 @@
   
   h2, h3 {
     text-align: center;
-  }
-
-  a:hover {
-    text-decoration: underline;
   }
 
   img {

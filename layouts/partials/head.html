@@ -20,7 +20,7 @@
 		{{- $cssTarget		:= "css/style.css" }}
 		{{- $style			:= resources.Get "styles/main.scss" | resources.ToCSS | resources.PostCSS | resources.Minify -}}
   		<link rel="stylesheet" href="{{ $style.RelPermalink }}">
-		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Libre+Baskerville:400,400i,700">
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Alegreya:400,400i|Libre+Baskerville:400,400i,700|Yantramanav:300">
 	
 		<!-- Favicon -->
 		<link rel="icon" type="image/png" sizes="32x32" href="{{ .Site.BaseURL }}images/favicon-32x32.png">

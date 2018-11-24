@@ -3,6 +3,10 @@
   line-height: 1.5;
 }
 
+::selection {
+  background-color: rgba($default-color, 0.1);
+}
+
 html,
 body {
   color: $default-color;

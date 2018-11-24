@@ -1,31 +1,24 @@
 {{ define "main" }}
+<article class="post">
+  {{ partial "single/post-header.html" . }}
 
-<main>
-  <div class="post">
-    <header class="post-header">
-      {{ partial "single/post-info.html" . }}
-      {{ partial "single/title.html" . }}
-    </header>
+  {{ partial "single/header.html" . }}
 
-    {{ partial "single/header.html" . }}
-
-    <div class="post-content">
-      {{ .Content }}
-    </div>
-
-    {{ partial "single/footer.html" . }}
+  <div class="post-content">
+    {{ .Content }}
   </div>
 
-  <div class="pagination">
-    {{- if .PrevPage }}
-    <a href="{{ .PrevPage.URL }}" class="left arrow">&#8592;</a>
-    {{- end }}
-    {{- if .NextPage }}
-    <a href="{{ .NextPage.URL }}" class="right arrow">&#8594;</a>
-    {{- end }}
+  {{ partial "single/footer.html" . }}
+</article>
 
-    <a href="#" class="top">{{ i18n "top" }}</a>
-  </div>
-</main>
+<div class="pagination">
+  {{- if .PrevPage }}
+  <a href="{{ .PrevPage.URL }}" class="left arrow" title="{{ i18n "previousArticle" }}">&#8592;</a>
+  {{- end }}
+  {{- if .NextPage }}
+  <a href="{{ .NextPage.URL }}" class="right arrow" title="{{ i18n "nextArticle" }}">&#8594;</a>
+  {{- end }}
 
+  <a href="#" class="top" id="top">{{ i18n "top" }}</a>
+</div>
 {{ end }}
