@@ -17,8 +17,8 @@
   }
 
   &-time {
+    @extend %font-sans-serif;
     color: $default-tint;
-    font-family: $sans-serif;
     letter-spacing: .5px;
   }
 
