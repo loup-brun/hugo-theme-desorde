@@ -2,9 +2,8 @@
   &-item {
     border-bottom: 1px solid $grey-2;
     color: $default-color;
-    display: block;
-    padding: 2rem 0;
-//    margin-bottom: 2rem;
+    display: block; // cause it might be an anchor `<a>` tag
+    padding: 3rem 0;
 
     &:hover .catalogue-line,
     &:focus .catalogue-line {
@@ -17,7 +16,7 @@
   }
 
   &-time {
-    @extend %font-sans-serif;
+    font-family: $serif-secondary;
     color: $default-tint;
     letter-spacing: .5px;
   }
