@@ -11,7 +11,12 @@
 			{{- if eq .URL "/" }}
 				{{ .Site.Title }}
 			{{- else }}
-				{{ .Title }} &middot; {{ .Site.Title }}
+      {{- if (eq .Page.Section "tags") }}
+				#{{ lower .Title }}
+      {{- else }}
+				{{ .Title }}
+      {{- end }}
+      &middot; {{ .Site.Title }}
 			{{- end }}
 		</title>
 	

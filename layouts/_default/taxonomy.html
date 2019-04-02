@@ -1,9 +1,12 @@
 {{ define "main" }}
 
-<h1>{{ strings.FirstUpper .Data.Singular }} {{ .Title }}</h1>
+
+<h1>{{ strings.FirstUpper .Data.Singular }}: #{{ lower .Title }}</h1>
+
+<a href="..">&larr; Retour</a>
 
 <article class="catalogue">
-  {{ range (.Paginate .Pages).Pages }}
+  {{ range .Pages }}
   {{ .Render "summary" }}
   {{ end }}
 </article>

@@ -13,6 +13,9 @@ other = "le"
 [top]
 other = "Haut"
 
+[tag]
+other = "Étiquette"
+
 [previousArticle]
 other = "Précédent"
 

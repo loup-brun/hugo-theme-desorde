@@ -1,13 +1,26 @@
 {{ define "main" }}
 
 <h1>{{ .Title }}</h1>
-<div class="catalogue">
+
+<article class="">
     <ul>
-    {{- range (.Paginate .Data.Pages).Pages -}}
-        <li><a href="{{ .Permalink }}">{{ .Title }}</a></li>
+    {{- range .Pages -}}
+        <li>
+          <a href="{{ .Permalink }}"
+             class="catalogue-item">
+              <span class="catalogue-title">#{{ lower .Title }}</span>
+              <em>{{ .Paginator.TotalNumberOfElements }} 
+                {{- if gt (.Paginator.TotalNumberOfElements) 1 }}
+                {{ pluralize "page" }}
+                {{- else }}
+                page
+                {{ end }}
+            </em>
+          </a>
+      </li>
     {{- end -}}
     </ul>
-</div>
+</article>
 
 <div class="pagination">
     {{- if .Paginator.HasPrev -}}
