@@ -1,0 +1,10 @@
+<div class="pagination">
+  {{- if .PrevPage }}
+  <a href="{{ .PrevPage.URL }}" class="left arrow" title="{{ i18n "previousArticle" }}">&#8592;</a>
+  {{- end }}
+  {{- if .NextPage }}
+  <a href="{{ .NextPage.URL }}" class="right arrow" title="{{ i18n "nextArticle" }}">&#8594;</a>
+  {{- end }}
+
+  <a href="#" class="top" id="top" title="{{ i18n "top" }}">&uarr;</a>
+</div>

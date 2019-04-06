@@ -1,23 +1,35 @@
+{{ define "introduction" }}
+
+<section class="home-intro">
+  <div class="container">
+    {{ .Content}}
+  </div>
+</section>
+
+{{ end }}
+
 {{ define "main" }}
 
-<div class="catalogue">
-  {{ range .Paginator.Pages }}
+{{ $featuredSection := .Params.featuredSection }}
+{{ $featuredSectionPages := (.Site.GetPage "section" $featuredSection.section).Pages }}
+
+{{ if $featuredSection }}
+<section class="home-featured">
+  <h2>{{ $featuredSection.title }}</h2>
+
+  <hr class="home-featured-line" role="separator" />
+
+  {{ range first $featuredSection.limit $featuredSectionPages }}
   {{ .Render "summary" }}
   {{ end }}
-</div>
+</section>
 
-<div class="pagination">
-  {{ if .Paginator.HasPrev }}
-  <a href="{{ .Paginator.Prev.URL }}" class="left arrow" title="{{ i18n "previousPage" }}">&#8592;</a>
-  {{ end }}
-  {{ if .Paginator.HasNext }}
-  <a href="{{ .Paginator.Next.URL }}" class="right arrow" title="{{ i18n "nextPage" }}">&#8594;</a>
-  {{ end }}
+{{ if gt (len $featuredSectionPages) $featuredSection.limit }}
+<a href="{{ (.Site.GetPage "section" $featuredSection.section).RelPermalink }}">Lire les autres publications &rarr;</a>
+{{ end }}
+{{ end }}
 
-  {{ if or .Paginator.HasNext .Paginator.HasPrev }}
-  <span>{{ .Paginator.PageNumber }}</span>
-  {{ end }}
-</div>
+{{ partial "pagination.html" . }}
 
 <!-- Netlify identity widget -->
 <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>

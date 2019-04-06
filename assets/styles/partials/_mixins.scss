@@ -1,0 +1,7 @@
+@mixin line {
+  border: 0;
+  border-top: 0.15rem solid $default-shade;
+  display: block;
+  margin: 2rem 0;
+  width: 2rem;
+}

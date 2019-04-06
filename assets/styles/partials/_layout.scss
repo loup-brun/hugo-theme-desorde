@@ -4,10 +4,8 @@
   width: 80%;
 }
 
-.header-home {
-  min-height: 80vh;
-  padding: 20rem 1rem;
-  background-color: $header-home-background;
+.split-half {
+  
 }
 
 main,
@@ -22,6 +20,8 @@ footer,
 .nav {
   box-shadow: 0 2px 2px -2px $shadow-color;
   overflow: auto;
+  position: relative;
+  z-index: 5; // make sure this overlaps sectoins to show shadow
 
   &-container {
     margin: 1rem auto;

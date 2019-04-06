@@ -29,10 +29,9 @@
   }
 
   &-line {
+    @include line;
+    margin: 1rem 0;
     transition: all .7s cubic-bezier(0.77, 0, 0.175, 1);
-    border-top: .15rem solid $default-shade;
-    display: block;
-    width: 2rem;
   }
 }
 
