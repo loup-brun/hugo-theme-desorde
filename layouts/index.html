@@ -1,19 +1,23 @@
+{{/* --- BEGIN INTRODUCTION BLOCK --- */}}
 {{ define "introduction" }}
 
+{{ if (len .Content) }}
 <section class="home-intro">
   <div class="container">
     {{ .Content}}
   </div>
 </section>
-
 {{ end }}
 
+{{ end }}
+{{/* --- END INTRODUCTION BLOCK --- */}}
+
+{{/* --- BEGIN MAIN BLOCK --- */}}
 {{ define "main" }}
 
+{{ if isset .Params.featuredSection "section" }}
 {{ $featuredSection := .Params.featuredSection }}
 {{ $featuredSectionPages := (.Site.GetPage "section" $featuredSection.section).Pages }}
-
-{{ if $featuredSection }}
 <section class="home-featured">
   <h2>{{ $featuredSection.title }}</h2>
 
@@ -28,8 +32,7 @@
 <a href="{{ (.Site.GetPage "section" $featuredSection.section).RelPermalink }}">Lire les autres publications &rarr;</a>
 {{ end }}
 {{ end }}
-
-{{ partial "pagination.html" . }}
+{{/* END */}}
 
 <!-- Netlify identity widget -->
 <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
@@ -46,3 +49,4 @@
 </script>
 
 {{ end }}
+{{/* --- END MAIN BLOCK --- */}}
