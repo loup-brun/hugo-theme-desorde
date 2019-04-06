@@ -17,7 +17,7 @@ $header-home-background: $paper;
 // Fonts
 $serif-primary: 'Libre Baskerville', 'Times New Roman', Times, serif;
 $serif-secondary: 'Alegreya', Palatino, 'Palatino LT STD', 'Palatino Linotype', 'Book Antiqua', 'Garamond', serif;
-$sans-serif: 'Yantramanav', 'Helvetica Neue', 'Segoe UI', Helvetica, Arial, sans-serif;
+$sans-serif: 'Fira Sans', 'Helvetica Neue', 'Segoe UI', Helvetica, Arial, sans-serif;
 $monospaced: Menlo, Monaco, monospace;
 
 @mixin box-sizing($type: border-box) {
