@@ -8,6 +8,15 @@
   {{- end }}
   
   <h1 class="post-title">{{ .Title }}</h1>
+    {{ if .Params.categ }}
+  {{ range .Params.categ }}
+  <div class="post-taxonomies">
+  
+    <a href="/categ/{{ . }}">#{{ . }}</a>
+  
+  </div>
+  {{ end }}
+  {{ end }}
   <hr class="post-line" role="separator" />
 
   {{- if ne .Params.Author false }}

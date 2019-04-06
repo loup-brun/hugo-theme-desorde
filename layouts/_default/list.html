@@ -1,7 +1,7 @@
 {{ define "main" }}
 
 <article class="catalogue">
-    {{ range (.Paginate .Pages).Pages }}
+    {{ range .Paginator.Pages }}
         {{ .Render "summary" }}
     {{ end }}
 </article>
@@ -13,8 +13,11 @@
     {{ if .Paginator.HasNext }}
         <a href="{{ .Paginator.Next.URL }}" class="right arrow">&#8594;</a>
     {{ end }}
-
-    <span>{{ .Paginator.PageNumber }}</span>
+  
+  {{ if or .Paginator.HasNext .Paginator.HasPrev }}
+  <span>{{ .Paginator.PageNumber }}</span>
+  {{ end }}
+  
 </div>
 
 {{ end }}

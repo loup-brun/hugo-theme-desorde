@@ -1,9 +1,6 @@
 {{ define "main" }}
 
-
-<h1>{{ strings.FirstUpper .Data.Singular }}: #{{ lower .Title }}</h1>
-
-<a href="..">&larr; Retour</a>
+<h1><a href="/{{ .Data.Singular }}">{{ .Data.Singular }}</a> : #{{ lower .Title }}</h1>
 
 <article class="catalogue">
   {{ range .Pages }}
@@ -19,7 +16,9 @@
   <a href="{{ .Paginator.Next.URL }}" class="right arrow">&#8594;</a>
   {{ end }}
 
+  {{ if or .Paginator.HasNext .Paginator.HasPrev }}
   <span>{{ .Paginator.PageNumber }}</span>
+  {{ end }}
 </div>
 
 {{ end }}
