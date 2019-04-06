@@ -7,7 +7,7 @@
     {{- range .Pages }}
     <li class="terms-catalogue-term">
       <a href="{{ .Permalink }}">
-        <span class="tersm-catalogue-title">#{{ lower .Title }}</span>
+        <span class="terms-catalogue-title">#{{ lower .Title }}</span>
         <span class="terms-catalogue-pagecount">
             {{- .Paginator.TotalNumberOfElements }} 
         </span>
