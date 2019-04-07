@@ -1,5 +1,23 @@
 {{ define "main" }}
 
+<header>
+  <h1>
+    {{/*
+    <small><a href="/{{ .Data.Singular }}">{{ .Data.Singular }}</a></small>
+    */}}
+    #{{ lower .Title }}
+  </h1>
+  
+  <small>
+  {{- len .Pages }}
+  {{- if gt (len .Pages) 1 }}
+  publications
+  {{- else }}
+  publication
+  {{- end }}
+  </small>
+
+</header>
 <article class="catalogue">
     {{ range .Paginator.Pages }}
         {{ .Render "summary" }}
