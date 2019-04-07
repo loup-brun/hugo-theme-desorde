@@ -1,24 +1,28 @@
 {{ define "main" }}
 
-<h1><a href="/{{ .Data.Singular }}">{{ .Data.Singular }}</a> : #{{ lower .Title }}</h1>
+<header>
+  <h1>
+    {{/*
+    <small><a href="/{{ .Data.Singular }}">{{ .Data.Singular }}</a></small>
+    */}}
+    #{{ lower .Title }}
+  </h1>
+  
+  <small>
+  {{- len .Data.Pages }}
+  {{- if gt (len .Data.Pages) 1 }}
+  publications
+  {{- else }}
+  publication
+  {{- end }}
+  </small>
+
+</header>
 
 <article class="catalogue">
   {{ range .Pages }}
   {{ .Render "summary" }}
   {{ end }}
 </article>
-
-<div class="pagination">
-  {{ if .Paginator.HasPrev }}
-  <a href="{{ .Paginator.Prev.URL }}" class="left arrow">&#8592;</a>
-  {{ end }}
-  {{ if .Paginator.HasNext }}
-  <a href="{{ .Paginator.Next.URL }}" class="right arrow">&#8594;</a>
-  {{ end }}
-
-  {{ if or .Paginator.HasNext .Paginator.HasPrev }}
-  <span>{{ .Paginator.PageNumber }}</span>
-  {{ end }}
-</div>
 
 {{ end }}

@@ -1,3 +1,14 @@
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+main {
+  flex-grow: 1;
+}
+
 .container {
   margin: 0 auto;
   max-width: 800px;
@@ -89,9 +100,11 @@ footer,
 }
 
 footer {
-  font-family: $serif-secondary;
-  padding: 2rem 0;
+  padding: 1rem 0;
+  margin-top: 2rem;
   text-align: center;
+  border-top: .5px solid $grey-2;
+  font-family: $serif-secondary;
 
   span {
     color: $default-color;

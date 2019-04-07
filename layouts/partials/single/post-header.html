@@ -9,10 +9,10 @@
   
   <h1 class="post-title">{{ .Title }}</h1>
     {{ if .Params.categ }}
-  {{ range .Params.categ }}
+    {{ range .Params.categ }}
   <div class="post-taxonomies">
   
-    <a href="/categ/{{ . }}">#{{ . }}</a>
+    <a href="/c/{{ . }}">#{{ . }}</a>
   
   </div>
   {{ end }}
