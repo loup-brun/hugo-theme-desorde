@@ -7,12 +7,11 @@
   {{ end }}
 
   <title>
-    {{- if eq .URL "/" }}
+    {{- if .IsHome }}
     {{ .Site.Title }}
     {{- else }}
-    {{ .Title }}
+    {{ .Title }} &middot; {{ .Site.Title }}
     {{- end }}
-    &middot; {{ .Site.Title }}
   </title>
 
   <!-- CSS -->
