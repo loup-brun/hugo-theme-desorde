@@ -2,18 +2,17 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="{{ if .Description }}{{ .Description }}{{else}}{{ $.Site.Params.description  }}{{end}}">
+  {{ if $.Site.Params.author}}
+  <meta name="author" content="{{ $.Site.Params.author }}" />
+  {{ end }}
 
   <title>
     {{- if eq .URL "/" }}
     {{ .Site.Title }}
     {{- else }}
-    {{- if (eq .Page.Section "tags") }}
-    #{{ lower .Title }}
-    {{- else }}
     {{ .Title }}
     {{- end }}
     &middot; {{ .Site.Title }}
-    {{- end }}
   </title>
 
   <!-- CSS -->
