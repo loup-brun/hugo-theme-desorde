@@ -1,5 +1,7 @@
 .post {
   padding: 2rem 0;
+  font-size: 19px;
+  line-height: 1.85;
   
   &-header {
 //    padding: 2rem 0;
@@ -18,7 +20,7 @@
 
   &-title {
     color: $default-shade;
-    font-size: 2rem;
+    font-size: 1.8rem;
     margin: 1rem 0;
     text-align: center;
   }
@@ -37,8 +39,8 @@
   }
 
   p {
-    margin: 0 0 1rem;
-    text-align: justify;
+    margin: 0 0 2.5rem;
+    //text-align: justify;
   }
   
   h2, h3 {
