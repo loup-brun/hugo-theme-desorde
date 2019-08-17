@@ -3,6 +3,6 @@
   {{ partial "pagination.html" . }}
   {{ end }}
     <span>
-    &copy; <time datetime="{{ now }}">{{ now.Format "2006" }}</time> {{ .Site.Author.name }}.
+    &copy; <time datetime="{{ now }}">{{ now.Format "2006" }}</time> {{ .Site.Params.author }}.
     </span>
 </footer>
